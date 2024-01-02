@@ -1,0 +1,74 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-item {
+  margin-left: 20px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: -1; /* hide behind the navbar */
+    opacity: 0; /* make it invisible */
+    transform: translateY(-100%); /* move it above the navbar */
+  }
+
+  .navbar-menu.open {
+    display: flex; /* show the menu */
+    z-index: +1; /* bring it to the front */
+    opacity: 1; /* make it visible */
+    transform: translateY(0); /* move it below the navbar */
+  }
+
+  .navbar-item {
+    margin-left: 0; /* remove the left margin */
+    margin-bottom: 10px; /* add some bottom margin */
+  }
+
+  .navbar-toggle {
+    display: block; /* show the toggle button */
+    cursor: pointer; /* change the cursor to pointer */
+  }
+}
