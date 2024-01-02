@@ -11,8 +11,11 @@ import JoinPage from "./components/Authentication/JoinPage";
 import MenuUmumSains from "./components/GameMenu/MenuUmumSains";
 import MenuBentukWarna from "./components/GameMenu/MenuBentukWarna";
 import MenuBilanganHuruf from "./components/GameMenu/MenuBilanganHuruf";
-import SayurSatu from "./components/Games/GimSayuran/Sayuran_1";
+import SayurSatu from "./components/Games/Sayuran_1";
 import Game from "./components/Frontend/Game";
+import GimBuah from "./components/Games/GimBuah";
+import GimSayur from "./components/Games/GimSayur";
+import GimHewan from "./components/Games/GimHewan";
 
 function App() {
   return (
@@ -31,7 +34,9 @@ function App() {
             <Route path="/home/umum_dan_sains" element={<MenuUmumSains />} />
             <Route path="/home/bentuk_dan_warna" element={<MenuBentukWarna />} />
             <Route path="/home/bilangan_dan_huruf" element={<MenuBilanganHuruf />} />
-
+            <Route path="/games/mengenal-buah" element={<GimBuah />} />
+            <Route path="/games/mengenal-sayur" element={<GimSayur />} />
+            <Route path="/games/mengenal-hewan" element={<GimHewan />} />
             <Route path="/permainan/Gim-Sayur/01" element={<SayurSatu />} />
 
             <Route path="/edit" element={<EditProfil />} />

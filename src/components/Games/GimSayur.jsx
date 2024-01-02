@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button } from "@material-tailwind/react";
 
-export default function SayurSatu() {
+export default function GimSayur() {
   const navigate = useNavigate();
 
   const benar = () => {
@@ -63,7 +63,7 @@ export default function SayurSatu() {
             UI/UX Review Check
           </Typography>{" "}
           <CardHeader color="blue-gray" className="relative h-56">
-            <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="card-image" />
+            <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="c" />
           </CardHeader>
           <CardBody>
             <Typography>The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.</Typography>

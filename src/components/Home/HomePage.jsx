@@ -63,10 +63,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative items-center  flex align-center flex-col justify-center text-center " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
-      <HomeNavbar />
-      <GameCategory />
+    <>
+      <div className="relative items-center  flex align-center flex-col justify-center text-center " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
+        <HomeNavbar />
+        <GameCategory />
+      </div>
       <FooterPage />
-    </div>
+    </>
   );
 }
