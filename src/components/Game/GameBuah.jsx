@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import HomeNavbar from "../Navigation/HomeNavbar";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import ScoreboardIcon from "@mui/icons-material/Scoreboard";
 import { Button, Typography } from "@material-tailwind/react";
+import MainNavbar from "../Navigation/MainNavbar";
 
 const images = [
-  { url: "https://source.unsplash.com/random?cats", name: "Kucing" },
-  { url: "https://source.unsplash.com/random?dog", name: "Anjing" },
-  { url: "https://source.unsplash.com/random?bird", name: "Burung" },
-  { url: "https://source.unsplash.com/random?fish", name: "Ikan" },
-  { url: "https://source.unsplash.com/random?lion", name: "Singa" },
-  { url: "https://source.unsplash.com/random?tiger", name: "Harimau" },
-  { url: "https://source.unsplash.com/random?elephant", name: "Gajah" },
-  { url: "https://source.unsplash.com/random?monkey", name: "Monyet" },
-  { url: "https://source.unsplash.com/random?panda", name: "Panda" },
-  { url: "https://source.unsplash.com/random?zebra", name: "Zebra" },
+  { url: "https://source.unsplash.com/random?apple", name: "Apel" },
+  { url: "https://source.unsplash.com/random?starfruit", name: "Belimbing" },
+  { url: "https://source.unsplash.com/random?cherry", name: "Ceri" },
+  { url: "https://source.unsplash.com/random?durian", name: "Durian" },
+  { url: "https://source.unsplash.com/random?guava", name: "Jambu" },
+  { url: "https://source.unsplash.com/random?watermelon", name: "Semangka" },
+  { url: "https://source.unsplash.com/random?grape", name: "Anggur" },
+  { url: "https://source.unsplash.com/random?melon", name: "Melon" },
+  { url: "https://source.unsplash.com/random?coconut", name: "Kelapa" },
+  { url: "https://source.unsplash.com/random?dragonfruit", name: "Buah Naga" },
 ];
 
 const shuffle = (array) => {
@@ -88,7 +88,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
   );
 };
 
-const GimHewan = () => {
+const GameBuah = () => {
   const [level, setLevel] = useState(1);
   const [unlockedLevels, setUnlockedLevels] = useState([1]);
   const [image, setImage] = useState(null);
@@ -155,10 +155,10 @@ const GimHewan = () => {
     <>
       <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
         <div style={{ marginBottom: 5, display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <HomeNavbar />
+          <MainNavbar />
           <Card sx={{ mt: 2 }}>
             <Typography className="m-3" variant="h4" color="blue">
-              Tebak Gambar Hewan
+              Tebak Gambar Buah
             </Typography>
           </Card>
           <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
@@ -196,4 +196,4 @@ const GimHewan = () => {
   );
 };
 
-export default GimHewan;
+export default GameBuah;

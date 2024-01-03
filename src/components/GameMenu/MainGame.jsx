@@ -20,7 +20,7 @@ export default function MainGame() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-buah">
+                    <a href="/game/mengenal-buah">
                       <Button color="green" size="sm">
                         MAINKAN
                       </Button>
@@ -42,7 +42,7 @@ export default function MainGame() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-hewan">
+                    <a href="/game/mengenal-hewan">
                       <Button color="green" size="sm">
                         MAINKAN
                       </Button>
@@ -64,7 +64,7 @@ export default function MainGame() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-profesi">
+                    <a href="/game/mengenal-profesi">
                       <Button color="green" size="sm">
                         MAINKAN
                       </Button>
@@ -86,7 +86,7 @@ export default function MainGame() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-bentuk">
+                    <a href="/game/mengenal-bentuk">
                       <Button color="green" size="sm">
                         MAINKAN
                       </Button>

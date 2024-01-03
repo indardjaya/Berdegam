@@ -11,11 +11,14 @@ import JoinPage from "./components/Authentication/JoinPage";
 import MenuUmumSains from "./components/GameMenu/MenuUmumSains";
 import MenuBentukWarna from "./components/GameMenu/MenuBentukWarna";
 import MenuBilanganHuruf from "./components/GameMenu/MenuBilanganHuruf";
-import SayurSatu from "./components/Games/Sayuran_1";
+import SayurSatu from "./components/Gim/Sayuran_1";
 import Game from "./components/Frontend/Game";
-import GimBuah from "./components/Games/GimBuah";
-import GimSayur from "./components/Games/GimSayur";
-import GimHewan from "./components/Games/GimHewan";
+import GimSayur from "./components/Gim/GimSayur";
+import GimHewan from "./components/Gim/GimHewan";
+import GameHewan from "./components/Game/GameHewan";
+import GameBuah from "./components/Game/GameBuah";
+import GameProfesi from "./components/Game/GameProfesi";
+import GameBentuk from "./components/Game/GameBentuk";
 
 function App() {
   return (
@@ -31,12 +34,24 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/settings" element={<Pengaturan />} />
             <Route path="/guide" element={<Panduan />} />
-            <Route path="/home/umum_dan_sains" element={<MenuUmumSains />} />
-            <Route path="/home/bentuk_dan_warna" element={<MenuBentukWarna />} />
-            <Route path="/home/bilangan_dan_huruf" element={<MenuBilanganHuruf />} />
-            <Route path="/games/mengenal-buah" element={<GimBuah />} />
-            <Route path="/games/mengenal-sayur" element={<GimSayur />} />
+            <Route path="/category/umum_dan_sains" element={<MenuUmumSains />} />
+            <Route path="/category/bentuk_dan_warna" element={<MenuBentukWarna />} />
+            <Route path="/category/bilangan_dan_huruf" element={<MenuBilanganHuruf />} />
+            <Route path="/game/mengenal-buah" element={<GameBuah />} />
+            <Route path="/game/mengenal-hewan" element={<GameHewan />} />
+            <Route path="/game/mengenal-profesi" element={<GameProfesi />} />
+            <Route path="/game/mengenal-bentuk" element={<GameBentuk />} />
+
+            <Route path="/games/mengenal-anatomi" element={<GimSayur />} />
+            <Route path="/games/mengenal-buah" element={<GimSayur />} />
             <Route path="/games/mengenal-hewan" element={<GimHewan />} />
+            <Route path="/games/mengenal-sayur" element={<GimSayur />} />
+            <Route path="/games/mengenal-astronomi" element={<GimHewan />} />
+            <Route path="/games/mengenal-animasi" element={<GimSayur />} />
+            <Route path="/games/mengenal-bendera" element={<GimHewan />} />
+            <Route path="/games/mengenal-superhero" element={<GimSayur />} />
+            <Route path="/games/mengenal-pahlawan" element={<GimHewan />} />
+            <Route path="/games/mengenal-pahlawan" element={<GimHewan />} />
             <Route path="/permainan/Gim-Sayur/01" element={<SayurSatu />} />
 
             <Route path="/edit" element={<EditProfil />} />

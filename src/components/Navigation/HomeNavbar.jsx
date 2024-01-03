@@ -13,19 +13,19 @@ import AudioNavbar from "../Audio/AudioNavbar";
 function NavList() {
   return (
     <List className="mt-2 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1 no-underline">
-      <Typography as="a" href="/home/umum_dan_sains" variant="small" color="blue" className="font-normal no-underline">
+      <Typography as="a" href="/category/umum_dan_sains" variant="small" color="blue" className="font-normal no-underline">
         <ListItem className="flex items-center gap-2 py-2 pr-4 no-underline">
           <BeakerIcon color="blue" className="h-[20px] w-[20px]" />
           Umum dan Sains
         </ListItem>
       </Typography>
-      <Typography as="a" href="/home/bentuk_dan_warna" variant="small" color="red" className="font-normal no-underline">
+      <Typography as="a" href="/category/bentuk_dan_warna" variant="small" color="red" className="font-normal no-underline">
         <ListItem className="flex items-center gap-2 py-2 pr-4 no-underline">
           <InterestsOutlinedIcon className="h-[20px] w-[20px]" />
           Bentuk dan Warna
         </ListItem>
       </Typography>
-      <Typography as="a" href="/home/bilangan_dan_huruf" variant="small" color="amber" className="font-normal no-underline">
+      <Typography as="a" href="/category/bilangan_dan_huruf" variant="small" color="amber" className="font-normal no-underline">
         <ListItem className="flex items-center gap-2 py-2 pr-4 no-underline">
           <ElevenMpOutlinedIcon className="h-[20px] w-[20px]" />
           Bilangan dan Huruf

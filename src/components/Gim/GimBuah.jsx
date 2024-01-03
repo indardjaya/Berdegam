@@ -49,7 +49,7 @@ const GimBuah = () => {
   return (
     <div>
       <img
-        src={`./images/buah/${gambarList[gambarIndex]}.jpg`} // Ganti dengan direktori gambar Anda
+        src={`./images/buah${gambarList[gambarIndex]}.jpg`} // Ganti dengan direktori gambar Anda
         alt={gambarList[gambarIndex]}
         style={{ maxWidth: "300px", maxHeight: "300px" }}
       />
