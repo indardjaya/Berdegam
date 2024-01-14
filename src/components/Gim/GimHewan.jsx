@@ -7,16 +7,17 @@ import ScoreboardIcon from "@mui/icons-material/Scoreboard";
 import { Button, Typography } from "@material-tailwind/react";
 
 const images = [
-  { url: "https://source.unsplash.com/random?cat", name: "Kucing" },
-  { url: "https://source.unsplash.com/random?dog", name: "Anjing" },
-  { url: "https://source.unsplash.com/random?bird", name: "Burung" },
-  { url: "https://source.unsplash.com/random?fish", name: "Ikan" },
-  { url: "https://source.unsplash.com/random?lion", name: "Singa" },
-  { url: "https://source.unsplash.com/random?tiger", name: "Harimau" },
-  { url: "https://source.unsplash.com/random?elephant", name: "Gajah" },
-  { url: "https://source.unsplash.com/random?monkey", name: "Monyet" },
-  { url: "https://source.unsplash.com/random?panda", name: "Panda" },
-  { url: "https://source.unsplash.com/random?zebra", name: "Zebra" },
+  { url: "/images/hewan/kelinci3.jpg", name: "Kelinci" },
+  { url: "/images/hewan/anjing2.jpg", name: "Anjing" },
+  { url: "/images/hewan/kucing1.jpg", name: "Kucing" },
+  { url: "/images/hewan/sapi.jpg", name: "Sapi" },
+  { url: "/images/hewan/kurakura.jpg", name: "Kura-Kura" },
+  { url: "/images/hewan/harimau.jpg", name: "Harimau" },
+  { url: "/images/hewan/gajah.jpg", name: "Gajah" },
+  { url: "/images/hewan/labalaba.jpg", name: "Laba-Laba" },
+  { url: "/images/hewan/panda.jpg", name: "Panda" },
+  { url: "/images/hewan/domba.jpg", name: "Domba" },
+  { url: "/images/hewan/burung-hantu.jpg", name: "Burung Hantu" },
 ];
 
 const shuffle = (array) => {

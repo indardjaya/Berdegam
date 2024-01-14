@@ -21,7 +21,7 @@ export function GamePage() {
             <div className="w-auto mx-auto m-5">
               <a href="./signin" className=" no-underline">
                 <div className="flex items-center">
-                  <Button color="amber" size="lg" className="w-full z-10">
+                  <Button color="yellow" size="lg" className="w-full z-10">
                     Permainan Lainnya
                   </Button>
                 </div>

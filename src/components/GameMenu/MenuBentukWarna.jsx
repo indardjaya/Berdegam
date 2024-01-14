@@ -1,7 +1,7 @@
-import { Button, Card, Typography } from "@material-tailwind/react";
-import MainGame from "./MainGame";
+import { Card, Typography } from "@material-tailwind/react";
 import HomeNavbar from "../Navigation/HomeNavbar";
 import FooterPage from "../LandingPage/FooterPage";
+import GameBentuk from "./GameBentukWarna";
 
 export default function MenuBentukWarna() {
   return (
@@ -20,16 +20,7 @@ export default function MenuBentukWarna() {
                 </Typography>
               </div>
               <div className=" mx-auto gap-2 items-center">
-                <MainGame />
-              </div>
-              <div className="w-auto mx-auto m-5">
-                <a href="./signin" className=" no-underline">
-                  <div className="flex items-center">
-                    <Button color="amber" size="lg" className="w-full z-10">
-                      Permainan Lainnya
-                    </Button>
-                  </div>
-                </a>
+                <GameBentuk />
               </div>
             </Card>
           </div>

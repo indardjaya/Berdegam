@@ -7,16 +7,16 @@ import { Button, Typography } from "@material-tailwind/react";
 import MainNavbar from "../Navigation/MainNavbar";
 
 const images = [
-  { url: "https://source.unsplash.com/random?apple", name: "Apel" },
-  { url: "https://source.unsplash.com/random?starfruit", name: "Belimbing" },
-  { url: "https://source.unsplash.com/random?cherry", name: "Ceri" },
-  { url: "https://source.unsplash.com/random?durian", name: "Durian" },
-  { url: "https://source.unsplash.com/random?guava", name: "Jambu" },
-  { url: "https://source.unsplash.com/random?watermelon", name: "Semangka" },
-  { url: "https://source.unsplash.com/random?grape", name: "Anggur" },
-  { url: "https://source.unsplash.com/random?melon", name: "Melon" },
-  { url: "https://source.unsplash.com/random?coconut", name: "Kelapa" },
-  { url: "https://source.unsplash.com/random?dragonfruit", name: "Buah Naga" },
+  { url: "/images/profesi/nahkoda.jpg", name: "NAHKODA" },
+  { url: "/images/profesi/atlet.jpg", name: "ATLET" },
+  { url: "/images/profesi/dokter.jpg", name: "DOKTER" },
+  { url: "/images/profesi/guru.jpg", name: "GURU" },
+  { url: "/images/profesi/koki.jpg", name: "KOKI/CHEF" },
+  { url: "/images/profesi/pembawa-berita.jpg", name: "PEMBAWA BERITA" },
+  { url: "/images/profesi/penyanyi.jpg", name: "PENYANYI" },
+  { url: "/images/profesi/perenang.jpg", name: "PERENANG" },
+  { url: "/images/profesi/pilot.jpg", name: "PILOT" },
+  { url: "/images/profesi/polisi.jpg", name: "POLISI" },
 ];
 
 const shuffle = (array) => {

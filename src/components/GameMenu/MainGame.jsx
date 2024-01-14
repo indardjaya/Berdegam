@@ -10,7 +10,7 @@ export default function MainGame() {
             <Grid>
               <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="https://source.unsplash.com/random?fruit" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="./images/buah/buah.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Buah
@@ -32,7 +32,7 @@ export default function MainGame() {
             <Grid>
               <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="hewan" src="https://source.unsplash.com/random?animal" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="hewan" src="./images/hewan/hewan.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Hewan
@@ -54,7 +54,7 @@ export default function MainGame() {
             <Grid>
               <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="profesi" src="https://source.unsplash.com/random?teacher" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="profesi" src="./images/profesi/profesi.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Profesi
@@ -76,7 +76,7 @@ export default function MainGame() {
             <Grid>
               <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="bentuk" src="https://source.unsplash.com/random?cube" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="bentuk" src="./images/bentuk/bentuk.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Bentuk
@@ -97,7 +97,6 @@ export default function MainGame() {
             </Grid>
           </Grid>
         </Box>
-        /
       </div>
     </>
   );

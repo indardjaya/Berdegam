@@ -25,7 +25,7 @@ export default function MainNavbar() {
           <div className="hidden lg:block"></div>
           <div className="hidden gap-2 lg:flex">
             <AudioNavbar src="/audio/AudioABC.mp3" />
-            <a href="/panduan">
+            <a href="/buku-panduan">
               <Tooltip className="bg-white text-blue-700 " color="blue" content="Panduan">
                 <IconButton color="green">
                   <AccessibilityIcon color="secondary" />
@@ -47,7 +47,7 @@ export default function MainNavbar() {
 
         <Collapse open={openNav}>
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden ">
-            <a href="/panduan">
+            <a href="/buku-panduan">
               <Tooltip className="bg-white text-blue-700" color="blue" content="Panduan">
                 <IconButton color="green">
                   <AccessibilityIcon color="secondary" />

@@ -1,20 +1,21 @@
 import { Button, Card, Typography } from "@material-tailwind/react";
+import MainGame from "../GameMenu/MainGame";
 import FooterPage from "../LandingPage/FooterPage";
-import MainNavbar from "./MainNavbar";
+import HomeNavbar from "./HomeNavbar";
 
-export default function Guide() {
+export function Panduan() {
   return (
     <>
       <div className="relative items-center  flex align-center flex-col justify-center text-center " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
-        <MainNavbar />
+        <HomeNavbar />
         <div className=" items-center px-8 lg:py-16">
           <div className="container  items-center justify-center mx-auto">
             <Card variant="gradient" className=" border-1  max-w-screen-xl ">
               <div className="mb-10 w-full items-center text-center">
-                <Typography variant="h2" color="green" className="m-2 text-center">
+                <Typography variant="h2" color="blue" className="m-2 text-center">
                   PANDUAN
                 </Typography>
-                <Typography variant="lead" className=" m-1 l:px-20 text-light-green-800">
+                <Typography variant="lead" className=" m-1 l:px-20 text-light-blue-800">
                   Bermain Dengan Gambar
                 </Typography>
               </div>
@@ -29,19 +30,21 @@ export default function Guide() {
                   (proyektor) dan pengeras suara (speaker). Selama menggunakan gim ini, orang tua dan pendidik harus selalu mendampingi dan mengawasi anak. Gim ini akan menjadi lebih bermakna, apabila anak berada dekat dengan orang tua atau
                   pendidik agar dapat bertanya dan berdiskusi.
                 </Typography>
-                <Typography variant="h5" color="green" className="m-2 text-center">
+                <Typography variant="h5" color="blue" className="m-2 text-center">
                   PANDUAN PENGGUNAAN
                 </Typography>
                 <Typography variant="h6" color="blue-sky" className="m-2 text-justify">
                   <ol>
-                    <li> 1. Untuk memulai game ini, silakan memilih jenis game yang diinginkan.</li>
+                    <li> 1. Untuk memulai game ini, silakan memilih kategori dan jenis game yang diinginkan.</li>
                     <li> 2. Anda diharapkan untuk menekan tombol "mainkan".</li>
                     <li> 3. Halaman game yang anda pilih akan ditampilkan.</li>
                     <li> 4. Pilih gambar yang ingin dijawab sesuai pertanyaan.</li>
                     <li> 5. Di dalam Halaman game ini, akan menampilkan beberapa tampilan di antaranya:</li>
                     <ul>
                       <li>- Logo Berdegam untuk kembali ke Beranda.</li>
+                      <li>- Tombol Menu untuk memilih kategori game.</li>
                       <li>- Tombol Musik untuk memutar atau mematikan musik.</li>
+                      <li>- Tombol Logout untuk keluar dari game.</li>
                       <li>- Tombol Panduan untuk melihat panduan penggunaan game.</li>
                       <li>- Tombol Masuk untuk masuk ke web game ini untuk melihat jenis game laiinnya.</li>
                       <li>- Tampilan Judul Game.</li>
@@ -54,9 +57,9 @@ export default function Guide() {
                 </Typography>
               </div>
               <div className="w-auto mx-auto m-5">
-                <a href="./dashboard" className=" no-underline">
+                <a href="./home" className=" no-underline">
                   <div className="flex items-center">
-                    <Button color="green" size="lg" className="w-full z-10">
+                    <Button color="blue" size="lg" className="w-full z-10">
                       Saya Paham
                     </Button>
                   </div>
@@ -70,3 +73,5 @@ export default function Guide() {
     </>
   );
 }
+
+export default Panduan;

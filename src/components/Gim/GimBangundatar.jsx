@@ -4,20 +4,19 @@ import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import ScoreboardIcon from "@mui/icons-material/Scoreboard";
 import { Button, Typography } from "@material-tailwind/react";
-import MainNavbar from "../Navigation/MainNavbar";
-import CountdownTimer from "./CountdownTimer";
+import HomeNavbar from "../Navigation/HomeNavbar";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/bentuk/lingkaran.png", name: "LINGKARAN" },
+  { url: "/images/bentuk/segi5.png", name: "SEGI 5" },
+  { url: "/images/bentuk/hati.png", name: "HATI" },
+  { url: "/images/bentuk/ketupat.pnG", name: "KETUPAT" },
+  { url: "/images/bentuk/bintang4.png", name: "BINTANG 4" },
+  { url: "/images/bentuk/segi6.png", name: "SEGI 6" },
+  { url: "/images/bentuk/arahpanah.png", name: "ARAH PANAH" },
+  { url: "/images/bentuk/persegi.png", name: "PERSEGI" },
+  { url: "/images/bentuk/segitiga.png", name: "SEGITIGA" },
+  { url: "/images/bentuk/bintang5.png", name: "BINTANG 5" },
 ];
 
 const shuffle = (array) => {
@@ -57,14 +56,14 @@ const LevelButton = ({ level, unlocked, onClick }) => {
   );
 };
 
-const ImageQuestion = ({ options, answer, onAnswer }) => {
+const ImageQuestion = ({ image, options, answer, onAnswer }) => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Typography variant="h5" color="orange" className="m-2">
-          Tebak Gambar " {answer} "
+          Pilih Bentuk
         </Typography>
-
+        <img src={image.url} alt={image.name} style={{ width: "100px", height: "100px" }} />
         <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div>
@@ -89,7 +88,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
   );
 };
 
-const GameBuah = () => {
+const GimBangunDatar = () => {
   const [level, setLevel] = useState(1);
   const [unlockedLevels, setUnlockedLevels] = useState([1]);
   const [image, setImage] = useState(null);
@@ -131,14 +130,6 @@ const GameBuah = () => {
         setImage(null);
         setOptions([]);
         setAnswer(null);
-
-        if (score === 30) {
-          Swal.fire({
-            icon: "success",
-            title: "Selamat, Benar berturut-turut yeayyy !!!",
-            text: "Klik Ok Untuk Lanjut",
-          });
-        }
       } else {
         Swal.fire({
           icon: "info",
@@ -162,12 +153,12 @@ const GameBuah = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MainNavbar />
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
+        <div style={{ marginBottom: 5, display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <HomeNavbar />
           <Card sx={{ mt: 2 }}>
             <Typography className="m-3" variant="h4" color="blue">
-              Tebak Gambar Buah
+              Pilih Gambar Bangun Datar
             </Typography>
           </Card>
           <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
@@ -190,9 +181,6 @@ const GameBuah = () => {
                     <Typography className="m-2" variant="h5" color="red">
                       " {score} "
                     </Typography>
-                    <Typography className="m-2" variant="h5" color="red">
-                      <CountdownTimer />
-                    </Typography>
                   </Box>
                 </Grid>
                 <Grid>
@@ -202,10 +190,10 @@ const GameBuah = () => {
             </Box>
           </Card>
         </div>
+        <FooterPage />
       </div>
-      <FooterPage />
     </>
   );
 };
 
-export default GameBuah;
+export default GimBangunDatar;

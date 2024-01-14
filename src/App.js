@@ -5,7 +5,6 @@ import DashboardPage from "./components/Home/DashboardPage";
 import Signup from "./components/Authentication/SignupPage";
 import Signin from "./components/Authentication/SigninPage";
 import Pengaturan from "./components/Navigation/Settings";
-import Panduan from "./components/Navigation/Guide";
 import EditProfil from "./components/Frontend/EditProf";
 import JoinPage from "./components/Authentication/JoinPage";
 import MenuUmumSains from "./components/GameMenu/MenuUmumSains";
@@ -19,6 +18,10 @@ import GameHewan from "./components/Game/GameHewan";
 import GameBuah from "./components/Game/GameBuah";
 import GameProfesi from "./components/Game/GameProfesi";
 import GameBentuk from "./components/Game/GameBentuk";
+import GimBangunDatar from "./components/Gim/GimBangundatar";
+import Guide from "./components/Navigation/Guide";
+import Panduan from "./components/Navigation/Panduan";
+import GimBangunRuang from "./components/Gim/GimBangunRuang";
 
 function App() {
   return (
@@ -33,7 +36,8 @@ function App() {
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/settings" element={<Pengaturan />} />
-            <Route path="/guide" element={<Panduan />} />
+            <Route path="/buku-panduan" element={<Guide />} />
+            <Route path="/panduan" element={<Panduan />} />
             <Route path="/category/umum_dan_sains" element={<MenuUmumSains />} />
             <Route path="/category/bentuk_dan_warna" element={<MenuBentukWarna />} />
             <Route path="/category/bilangan_dan_huruf" element={<MenuBilanganHuruf />} />
@@ -52,8 +56,10 @@ function App() {
             <Route path="/games/mengenal-superhero" element={<GimSayur />} />
             <Route path="/games/mengenal-pahlawan" element={<GimHewan />} />
             <Route path="/games/mengenal-pahlawan" element={<GimHewan />} />
-            <Route path="/permainan/Gim-Sayur/01" element={<SayurSatu />} />
+            <Route path="/games/mengenal-bangun-datar" element={<GimBangunDatar />} />
+            <Route path="/games/mengenal-bangun-ruang" element={<GimBangunRuang />} />
 
+            <Route path="/permainan/Gim-Sayur/01" element={<SayurSatu />} />
             <Route path="/edit" element={<EditProfil />} />
             <Route path="/g" element={<Game />} />
           </Route>

@@ -7,16 +7,16 @@ import { Button, Typography } from "@material-tailwind/react";
 import MainNavbar from "../Navigation/MainNavbar";
 
 const images = [
-  { url: "https://source.unsplash.com/random?apple", name: "Apel" },
-  { url: "https://source.unsplash.com/random?starfruit", name: "Belimbing" },
-  { url: "https://source.unsplash.com/random?cherry", name: "Ceri" },
-  { url: "https://source.unsplash.com/random?durian", name: "Durian" },
-  { url: "https://source.unsplash.com/random?guava", name: "Jambu" },
-  { url: "https://source.unsplash.com/random?watermelon", name: "Semangka" },
-  { url: "https://source.unsplash.com/random?grape", name: "Anggur" },
-  { url: "https://source.unsplash.com/random?melon", name: "Melon" },
-  { url: "https://source.unsplash.com/random?coconut", name: "Kelapa" },
-  { url: "https://source.unsplash.com/random?dragonfruit", name: "Buah Naga" },
+  { url: "/images/bentuk/lingkaran.png", name: "LINGKARAN" },
+  { url: "/images/bentuk/segi5.png", name: "SEGI 5" },
+  { url: "/images/bentuk/hati.png", name: "HATI" },
+  { url: "/images/bentuk/ketupat.pnG", name: "KETUPAT" },
+  { url: "/images/bentuk/bintang4.png", name: "BINTANG 4" },
+  { url: "/images/bentuk/segi6.png", name: "SEGI 6" },
+  { url: "/images/bentuk/arahpanah.png", name: "ARAH PANAH" },
+  { url: "/images/bentuk/persegi.png", name: "PERSEGI" },
+  { url: "/images/bentuk/segitiga.png", name: "SEGITIGA" },
+  { url: "/images/bentuk/bintang5.png", name: "BINTANG 5" },
 ];
 
 const shuffle = (array) => {
@@ -61,7 +61,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
     <>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Typography variant="h5" color="orange" className="m-2">
-          Tebak Gambar " {answer} "
+          Tebak Bentuk " {answer} "
         </Typography>
 
         <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>

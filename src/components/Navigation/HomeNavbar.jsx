@@ -75,13 +75,6 @@ export default function HomeNavbar() {
                 </IconButton>
               </Tooltip>
             </a>
-            <a href="/settings">
-              <Tooltip className="bg-white text-blue-700" color="blue" content="Pengaturan">
-                <IconButton color="amber">
-                  <SettingsIcon color="secondary" />
-                </IconButton>
-              </Tooltip>
-            </a>
 
             <Tooltip className="bg-white text-blue-700" color="blue" content="Keluar">
               <IconButton color="red">
@@ -100,13 +93,6 @@ export default function HomeNavbar() {
               <Tooltip className="bg-white text-blue-700" color="blue" content="Panduan">
                 <IconButton color="green">
                   <AccessibilityIcon color="secondary" />
-                </IconButton>
-              </Tooltip>
-            </a>
-            <a href="/signin">
-              <Tooltip className="bg-white text-blue-700" color="blue" content="Pengaturan">
-                <IconButton color="amber">
-                  <SettingsIcon color="secondary" />
                 </IconButton>
               </Tooltip>
             </a>

@@ -4,13 +4,13 @@ import "./index.css";
 // Buat array untuk menyimpan gambar yang tersedia
 const images = [
   "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
-  "https://i.ibb.co/6HD6vh0/barrier.png",
-  "https://i.ibb.co/8x9YH4w/cat.png",
-  "https://i.ibb.co/9tBnM5R/dog.png",
-  "https://i.ibb.co/4FjRdbH/flower.png",
-  "https://i.ibb.co/PFVF3vQ/heart.png",
-  "https://i.ibb.co/7XqwsLw/moon.png",
-  "https://i.ibb.co/4Sgptzd/star.png",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+  "https://unsplash.com/photos/black-and-white-cat-lying-on-brown-bamboo-chair-inside-room-gKXKBY-C-Dk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
 ];
 
 // Buat komponen Card untuk menampilkan kartu dan gambar
@@ -146,7 +146,7 @@ function Editprofil() {
   // Buat efek untuk memeriksa apakah gambar yang dipilih cocok setiap kali state gambar yang dipilih berubah
   useEffect(() => {
     checkMatch();
-  }, [selectedImages]);
+  }, []);
 
   return (
     <div className="container">

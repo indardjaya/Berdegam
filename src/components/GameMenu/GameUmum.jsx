@@ -119,7 +119,6 @@ export default function GameUmum() {
             </Grid>
           </Grid>
         </Box>
-        /
       </div>
     </>
   );
