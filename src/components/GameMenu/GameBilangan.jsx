@@ -1,26 +1,26 @@
 import { Button, Typography } from "@material-tailwind/react";
 import { Box, Card, CardActions, CardContent, CardMedia, Grid } from "@mui/material";
 
-export default function GameUmum() {
+export default function GameBilanganHuruf() {
   return (
     <>
       <div className=" mx-auto gap-2 items-center">
-        <Box sx={{ flexGrow: 2, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
+        <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
           <Grid container sx={{ justifyContent: "center" }}>
             <Grid>
-              <div className="items-center m-2">
+              <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/bendera/bendera.jpg" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/angka/angka.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Gim Bendera
+                      Angka Bilangan
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Bendera
+                      Menebak Angka Bilangan
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-bendera">
+                    <a href="/games/mengenal-angka">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>
@@ -30,19 +30,19 @@ export default function GameUmum() {
               </div>
             </Grid>
             <Grid>
-              <div className="items-center m-2">
+              <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/emoji/emoji.jpg" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/angka/lambang.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Gim Emoji
+                      Lambang Bilangan
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Emoji
+                      Menebak Lambang Bilangan
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-emoji">
+                    <a href="/games/mengenal-lambang-bilangan">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>
@@ -52,19 +52,19 @@ export default function GameUmum() {
               </div>
             </Grid>
             <Grid>
-              <div className="items-center m-2">
+              <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="hewan" src="/images/kendaraan/kendaraan.jpg" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/huruf/abjad.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Gim Kendaraan
+                      Huruf Abjad
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Kendaraan
+                      Menebak Huruf Abjad
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-kendaraan">
+                    <a href="/games/mengenal-abjad">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>
@@ -74,41 +74,19 @@ export default function GameUmum() {
               </div>
             </Grid>
             <Grid>
-              <div className="items-center m-2">
+              <div className="items-center ">
                 <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="profesi" src="/images/rambu/rambu.jpg" />
+                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/huruf/kata.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Gim Rambu
+                      Kata-Kata
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Rambu
+                      Menebak Kata-Kata
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-rambu">
-                      <Button color="blue" size="sm">
-                        MAINKAN
-                      </Button>
-                    </a>
-                  </CardActions>
-                </Card>
-              </div>
-            </Grid>
-            <Grid>
-              <div className="items-center m-2">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="bentuk" src="/images/profesi/profesi.jpg" />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Gim Profesi
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Profesi
-                    </Typography>
-                  </CardContent>
-                  <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-profesi">
+                    <a href="/games/mengenal-kata">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>

@@ -9,8 +9,8 @@ export default function GameSains() {
           <Grid container sx={{ justifyContent: "center" }}>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="https://source.unsplash.com/random?hands" />
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/anatomi/anatomi.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Anatomi
@@ -20,7 +20,7 @@ export default function GameSains() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-buah">
+                    <a href="/games/mengenal-anatomi">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>
@@ -29,10 +29,11 @@ export default function GameSains() {
                 </Card>
               </div>
             </Grid>
+
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="https://source.unsplash.com/random?fruit" />
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/buah/gimbuah.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Buah
@@ -51,10 +52,11 @@ export default function GameSains() {
                 </Card>
               </div>
             </Grid>
+
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="hewan" src="https://source.unsplash.com/random?animal" />
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="hewan" src="/images/hewan/hewan1.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Hewan
@@ -73,10 +75,11 @@ export default function GameSains() {
                 </Card>
               </div>
             </Grid>
+
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="profesi" src="https://source.unsplash.com/random?vegetable" />
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="profesi" src="https://source.unsplash.com/random?vegetable" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Sayur
@@ -86,7 +89,7 @@ export default function GameSains() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-profesi">
+                    <a href="/games/mengenal-sayur">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>
@@ -95,10 +98,11 @@ export default function GameSains() {
                 </Card>
               </div>
             </Grid>
+
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="bentuk" src="https://source.unsplash.com/random?star" />
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="bentuk" src="/images/astronomi/astronomi.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Astronomi
@@ -108,7 +112,121 @@ export default function GameSains() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-bentuk">
+                    <a href="/games/mengenal-astronomi">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+
+            <Grid>
+              <div className="items-center m-2">
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/bendera/bendera.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Bendera
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Gambar Bendera
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-bendera">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+
+            <Grid>
+              <div className="items-center m-2">
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/emoji/emoji.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Emoji
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Gambar Emoji
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-emoji">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+
+            <Grid>
+              <div className="items-center m-2">
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="hewan" src="/images/kendaraan/kendaraan.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Kendaraan
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Gambar Kendaraan
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-kendaraan">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+
+            <Grid>
+              <div className="items-center m-2">
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="profesi" src="/images/rambu/rambu.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Rambu
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Gambar Rambu
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-rambu">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+            <Grid>
+              <div className="items-center m-2">
+                <Card sx={{ maxWidth: 200, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="bentuk" src="/images/profesi/profesi.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Profesi
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Gambar Profesi
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-profesi">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>

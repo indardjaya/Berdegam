@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import HomeNavbar from "../Navigation/HomeNavbar";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
-import ScoreboardIcon from "@mui/icons-material/Scoreboard";
-import { Button, Typography } from "@material-tailwind/react";
+import HomeNavbar from "../Navigation/HomeNavbar";
+import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
   { url: "/images/hewan/kelinci3.jpg", name: "Kelinci" },
@@ -45,11 +45,11 @@ const LevelButton = ({ level, unlocked, onClick }) => {
           height: "50px",
           margin: "10px",
           fontSize: "20px",
-          backgroundColor: unlocked ? "green" : "red",
+          backgroundColor: unlocked ? "blue" : "yellow",
           borderRadius: 5,
         }}
       >
-        <Typography variant="lead" color="red" className="m-1 font-semibold">
+        <Typography variant="lead" color="green" className="m-1 font-semibold">
           {level}
         </Typography>
       </button>
@@ -60,31 +60,37 @@ const LevelButton = ({ level, unlocked, onClick }) => {
 const ImageQuestion = ({ options, answer, onAnswer }) => {
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <Typography variant="h5" color="orange" className="m-2">
-          Tebak Gambar " {answer} "
-        </Typography>
-
-        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
+      <Card className="m-3 w-150">
+        <div className=" w-full items-center text-center">
+          <Typography variant="h4" color="blue" className="m-2">
+            TEBAK GAMBAR HEWAN
+          </Typography>
+        </div>
+        <CardBody>
+          <Typography variant="h3" color="green" className=" text-center">
+            " {answer} "
+          </Typography>
+        </CardBody>
+        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
           {options.map((option, index) => (
-            <div>
+            <div backgroundColor="blue">
               <Button
+                className="bg-transparent"
                 key={index}
                 onClick={() => onAnswer(option)}
                 style={{
-                  width: "200px",
-                  height: "200px",
+                  width: "150px",
+                  height: "150px",
                   backgroundImage: `url(${option.url})`,
                   backgroundSize: "cover",
                   margin: 2,
-                  marginBottom: 3,
                   border: 1,
                 }}
               ></Button>
             </div>
           ))}
         </div>
-      </div>
+      </Card>
     </>
   );
 };
@@ -96,6 +102,7 @@ const GimHewan = () => {
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -119,6 +126,10 @@ const GimHewan = () => {
     if (option.name === answer) {
       setScore((score) => score + 10);
 
+      if (score === 100) {
+        navigate("/score");
+      }
+
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
         Swal.fire({
@@ -131,12 +142,20 @@ const GimHewan = () => {
         setImage(null);
         setOptions([]);
         setAnswer(null);
+
+        if (score === 30) {
+          Swal.fire({
+            icon: "success",
+            title: "Selamat, Benar berturut-turut yeayyy !!!",
+            text: "Klik Ok Untuk Lanjut",
+          });
+        }
       } else {
         Swal.fire({
           icon: "info",
           title: "SELAMAT",
           text: "Kamu Berhasil Menjawab Semuanya",
-          footer: '<a href="/category/umum_dan_sains">Kembali Ke Menu Permainan?</a>',
+          footer: '<a href="/dashboard">Kembali Ke Menu Permainan?</a>',
         });
       }
     } else {
@@ -154,43 +173,33 @@ const GimHewan = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
-        <div style={{ marginBottom: 5, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
-          <Card sx={{ mt: 2 }}>
-            <Typography className="m-3" variant="h4" color="blue">
-              Tebak Gambar Hewan
-            </Typography>
-          </Card>
-          <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
-            {unlockedLevels.map((unlockedLevel) => (
-              <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
-            ))}
-            {Array.from({ length: 10 - unlockedLevels.length }, (_, i) => i + unlockedLevels.length + 1).map((lockedLevel) => (
-              <LevelButton key={lockedLevel} level={lockedLevel} unlocked={false} onClick={() => {}} />
-            ))}
-          </Card>
-          <Card>
-            <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
-              <Grid container>
-                <Grid>
-                  <Box sx={{ m: 2, flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
-                    <ScoreboardIcon fontSize="large" color="primary" height="50px" />
-                    <Typography className="m-2" variant="h5" color="amber">
-                      SKOR POIN:
-                    </Typography>
-                    <Typography className="m-2" variant="h5" color="red">
-                      " {score} "
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid>
-                  <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
-                </Grid>
-              </Grid>
-            </Box>
-          </Card>
         </div>
+        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <Card>
+          <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
+            <Grid container>
+              <Grid>
+                <Box sx={{ m: 2, flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
+                  <Typography className="m-2" variant="h5" color="amber">
+                    SKOR POIN: " {score} "
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid></Grid>
+            </Grid>
+          </Box>
+        </Card>{" "}
+        <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
+          {unlockedLevels.map((unlockedLevel) => (
+            <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
+          ))}
+          {Array.from({ length: 10 - unlockedLevels.length }, (_, i) => i + unlockedLevels.length + 1).map((lockedLevel) => (
+            <LevelButton key={lockedLevel} level={lockedLevel} unlocked={false} onClick={() => {}} />
+          ))}
+        </Card>
       </div>
       <FooterPage />
     </>

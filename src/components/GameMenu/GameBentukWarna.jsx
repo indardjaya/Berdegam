@@ -9,7 +9,7 @@ export default function GameBentukWarna() {
           <Grid container sx={{ justifyContent: "center" }}>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
                   <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/bentuk/bentukdatar.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -31,7 +31,7 @@ export default function GameBentukWarna() {
             </Grid>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
                   <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/bentuk/bangunruang.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -53,7 +53,7 @@ export default function GameBentukWarna() {
             </Grid>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
                   <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/bentuk/namawarna1.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -75,7 +75,7 @@ export default function GameBentukWarna() {
             </Grid>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
                   <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/bentuk/bentukwarna1.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

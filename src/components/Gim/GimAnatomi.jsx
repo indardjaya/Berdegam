@@ -4,18 +4,27 @@ import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
 import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/anatomi/gigi.jpg", name: "GIGI" },
+  { url: "/images/anatomi/mulut.png", name: "MULUT" },
+  { url: "/images/anatomi/hidung.jpg", name: "HIDUNG" },
+  { url: "/images/anatomi/telinga.png", name: "TELINGA" },
+  { url: "/images/anatomi/jari.png", name: "JARI TANGAN" },
+  { url: "/images/anatomi/jantung2.jpg", name: "JANTUNG" },
+  { url: "/images/anatomi/kaki.jpg", name: "KAKI" },
+  { url: "/images/anatomi/lambung.jpg", name: "LAMBUNG" },
+  { url: "/images/anatomi/lidah.jpg", name: "LIDAH" },
+  { url: "/images/anatomi/mata.png", name: "MATA" },
+  { url: "/images/anatomi/otak.jpg", name: "OTAK" },
+  { url: "/images/anatomi/paru.jpg", name: "PARU-PARU" },
+  { url: "/images/anatomi/rambut.jpg", name: "RAMBUT" },
+  { url: "/images/anatomi/tangan.jpg", name: "TANGAN" },
+  { url: "/images/anatomi/tulang.jpg", name: "TULANG" },
+  { url: "/images/anatomi/kepala.png", name: "KEPALA" },
+  { url: "/images/anatomi/lutut.png", name: "LUTUT" },
+  { url: "/images/anatomi/usus.png", name: "USUS" },
 ];
 
 const shuffle = (array) => {
@@ -61,7 +70,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
       <Card className="m-3 w-150">
         <div className=" w-full items-center text-center">
           <Typography variant="h4" color="blue" className="m-2">
-            TEBAK GAMBAR SAYUR
+            TEBAK GAMBAR ANATOMI
           </Typography>
         </div>
         <CardBody>
@@ -93,13 +102,14 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
   );
 };
 
-const GimSayur = () => {
+const GimAnatomi = () => {
   const [level, setLevel] = useState(1);
   const [unlockedLevels, setUnlockedLevels] = useState([1]);
   const [image, setImage] = useState(null);
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -122,6 +132,10 @@ const GimSayur = () => {
   const handleAnswer = (option) => {
     if (option.name === answer) {
       setScore((score) => score + 10);
+
+      if (score === 100) {
+        navigate("/score");
+      }
 
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
@@ -199,4 +213,4 @@ const GimSayur = () => {
   );
 };
 
-export default GimSayur;
+export default GimAnatomi;

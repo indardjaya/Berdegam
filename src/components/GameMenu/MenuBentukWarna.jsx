@@ -25,8 +25,8 @@ export default function MenuBentukWarna() {
             </Card>
           </div>
         </div>
-        <FooterPage />
       </div>
+      <FooterPage />
     </>
   );
 }

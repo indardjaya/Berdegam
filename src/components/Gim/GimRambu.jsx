@@ -61,7 +61,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
       <Card className="m-3 w-150">
         <div className=" w-full items-center text-center">
           <Typography variant="h4" color="blue" className="m-2">
-            TEBAK GAMBAR SAYUR
+            TEBAK GAMBAR RAMBU
           </Typography>
         </div>
         <CardBody>
@@ -93,7 +93,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
   );
 };
 
-const GimSayur = () => {
+const GimRambu = () => {
   const [level, setLevel] = useState(1);
   const [unlockedLevels, setUnlockedLevels] = useState([1]);
   const [image, setImage] = useState(null);
@@ -199,4 +199,4 @@ const GimSayur = () => {
   );
 };
 
-export default GimSayur;
+export default GimRambu;
