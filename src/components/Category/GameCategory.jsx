@@ -20,7 +20,7 @@ export default function GameCategory() {
                         Menebak Gambar Kategori Umum dan Sains
                       </Typography>
                     </CardContent>
-                    <a href="/category/umum_dan_sains">
+                    <a href="/category/umum_dan_sains" className=" no-underline">
                       <Button color="blue" size="md" fullWidth>
                         PILIH KATEGORI
                       </Button>
@@ -40,7 +40,7 @@ export default function GameCategory() {
                         Menebak Gambar Kategori Bentuk dan Warna
                       </Typography>
                     </CardContent>
-                    <a href="/category/bentuk_dan_warna">
+                    <a href="/category/bentuk_dan_warna" className=" no-underline">
                       <Button color="blue" size="md" fullWidth>
                         PILIH KATEGORI
                       </Button>
@@ -60,7 +60,7 @@ export default function GameCategory() {
                         Menebak Gambar Kategori Bilangan dan Huruf
                       </Typography>
                     </CardContent>
-                    <a href="/category/bilangan_dan_huruf">
+                    <a href="/category/bilangan_dan_huruf" className=" no-underline">
                       <Button color="blue" size="md" fullWidth>
                         PILIH KATEGORI
                       </Button>

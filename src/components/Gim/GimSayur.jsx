@@ -4,18 +4,28 @@ import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
 import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/sayur/asparagus.jpg", name: "Asparagus" },
+  { url: "/images/sayur/bayam.jpg", name: "Bayam" },
+  { url: "/images/sayur/brokoli.jpg", name: "Brokoli" },
+  { url: "/images/sayur/buncis.jpg", name: "Buncis" },
+  { url: "/images/sayur/kubis.jpg", name: "Kubis" },
+  { url: "/images/sayur/lobak.jpg", name: "Lobak" },
+  { url: "/images/sayur/paprika.jpg", name: "Paprika" },
+  { url: "/images/sayur/pare.jpg", name: "Pare" },
+  { url: "/images/sayur/sawi.jpg", name: "Sawi" },
+  { url: "/images/sayur/selada.jpg", name: "Selada" },
+  { url: "/images/sayur/tauge.jpg", name: "Tauge" },
+  { url: "/images/sayur/wortel.jpg", name: "Wortel" },
+  { url: "/images/sayur/labu.jpg", name: "Labu" },
+  { url: "/images/sayur/tomat.jpg", name: "Tomat" },
+  { url: "/images/sayur/kentang.jpg", name: "Kentang" },
+  { url: "/images/sayur/terong.jpg", name: "Terong" },
+  { url: "/images/sayur/kacangpanjang.jpg", name: "Kacang Panjang" },
+  { url: "/images/sayur/okra.jpg", name: "Okra" },
+  { url: "/images/sayur/kangkung.jpg", name: "Kangkung" },
 ];
 
 const shuffle = (array) => {
@@ -69,7 +79,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
             " {answer} "
           </Typography>
         </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -100,6 +110,7 @@ const GimSayur = () => {
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -122,6 +133,10 @@ const GimSayur = () => {
   const handleAnswer = (option) => {
     if (option.name === answer) {
       setScore((score) => score + 10);
+
+      if (score === 90) {
+        navigate("/score");
+      }
 
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
@@ -170,7 +185,7 @@ const GimSayur = () => {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
-        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
         <Card>
           <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
             <Grid container>
@@ -184,7 +199,7 @@ const GimSayur = () => {
               <Grid></Grid>
             </Grid>
           </Box>
-        </Card>{" "}
+        </Card>
         <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
           {unlockedLevels.map((unlockedLevel) => (
             <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />

@@ -78,7 +78,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
             " {answer} "
           </Typography>
         </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -133,7 +133,7 @@ const GimAnatomi = () => {
     if (option.name === answer) {
       setScore((score) => score + 10);
 
-      if (score === 100) {
+      if (score === 90) {
         navigate("/score");
       }
 

@@ -17,6 +17,17 @@ const images = [
   { url: "/images/buah/melon.jpg", name: "Melon" },
   { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
   { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/buah/Alpukat.jpg", name: "Alpukat" },
+  { url: "/images/buah/nanas.jpg", name: "Nenas" },
+  { url: "/images/buah/delima.jpg", name: "Delima" },
+  { url: "/images/buah/Pepaya.jpg", name: "Pepaya" },
+  { url: "/images/buah/Kiwi.jpg", name: "Kiwi" },
+  { url: "/images/buah/sirsak.jpg", name: "Sirsak" },
+  { url: "/images/buah/jeruk.jpg", name: "Jeruk" },
+  { url: "/images/buah/stroberi.jpg", name: "Stroberi" },
+  { url: "/images/buah/pisang.jpg", name: "Pisang" },
+  { url: "/images/buah/pir.jpg", name: "Buah Pir" },
+  { url: "/images/buah/manggis.jpg", name: "Manggis" },
 ];
 
 const shuffle = (array) => {
@@ -70,7 +81,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
             " {answer} "
           </Typography>
         </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -125,7 +136,7 @@ const GimBuah = () => {
     if (option.name === answer) {
       setScore((score) => score + 10);
 
-      if (score === 100) {
+      if (score === 90) {
         navigate("/score");
       }
 
@@ -176,7 +187,7 @@ const GimBuah = () => {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
-        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
         <Card>
           <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
             <Grid container>
@@ -190,7 +201,7 @@ const GimBuah = () => {
               <Grid></Grid>
             </Grid>
           </Box>
-        </Card>{" "}
+        </Card>
         <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
           {unlockedLevels.map((unlockedLevel) => (
             <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />

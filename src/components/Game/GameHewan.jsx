@@ -17,7 +17,7 @@ const images = [
   { url: "/images/hewan/labalaba.jpg", name: "Laba-Laba" },
   { url: "/images/hewan/panda.jpg", name: "Panda" },
   { url: "/images/hewan/domba.jpg", name: "Domba" },
-  { url: "/images/hewan/burung-hantu.jpg", name: "Burung Hantu" },
+  { url: "/images/hewan/burung-hantu.png", name: "Burung Hantu" },
 ];
 
 const shuffle = (array) => {

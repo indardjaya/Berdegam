@@ -7,17 +7,34 @@ import { CardBody, Typography, Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/hewan/kelinci3.jpg", name: "Kelinci" },
-  { url: "/images/hewan/anjing2.jpg", name: "Anjing" },
+  { url: "/images/hewan/kelinci.jpg", name: "Kelinci" },
+  { url: "/images/hewan/anjing.jpg", name: "Anjing" },
+  { url: "/images/hewan/anjing1.jpg", name: "Anjing" },
+  { url: "/images/hewan/kucing.jpg", name: "Kucing" },
   { url: "/images/hewan/kucing1.jpg", name: "Kucing" },
   { url: "/images/hewan/sapi.jpg", name: "Sapi" },
   { url: "/images/hewan/kurakura.jpg", name: "Kura-Kura" },
+  { url: "/images/hewan/kura.jpg", name: "Kura-Kura" },
   { url: "/images/hewan/harimau.jpg", name: "Harimau" },
   { url: "/images/hewan/gajah.jpg", name: "Gajah" },
+  { url: "/images/hewan/gajah1.jpg", name: "Gajah" },
   { url: "/images/hewan/labalaba.jpg", name: "Laba-Laba" },
   { url: "/images/hewan/panda.jpg", name: "Panda" },
   { url: "/images/hewan/domba.jpg", name: "Domba" },
-  { url: "/images/hewan/burung-hantu.jpg", name: "Burung Hantu" },
+  { url: "/images/hewan/burung-hantu.png", name: "Burung Hantu" },
+  { url: "/images/hewan/angsa.jpg", name: "Angsa" },
+  { url: "/images/hewan/angsa1.jpg", name: "Angsa" },
+  { url: "/images/hewan/ikan.jpg", name: "Ikan" },
+  { url: "/images/hewan/kupu.jpg", name: "Kupu-Kupu" },
+  { url: "/images/hewan/kupukupu.jpg", name: "Kupu-Kupu" },
+  { url: "/images/hewan/orangutan.jpg", name: "Orang Utan" },
+  { url: "/images/hewan/monyet.jpg", name: "Monyet" },
+  { url: "/images/hewan/ayam.jpg", name: "Ayam" },
+  { url: "/images/hewan/bebek.jpg", name: "Bebek" },
+  { url: "/images/hewan/komodo.jpg", name: "Komodo" },
+  { url: "/images/hewan/belalang.jpg", name: "Belalang" },
+  { url: "/images/hewan/hiu.jpg", name: "Hiu" },
+  { url: "/images/hewan/kuda.jpg", name: "Kuda" },
 ];
 
 const shuffle = (array) => {
@@ -71,7 +88,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
             " {answer} "
           </Typography>
         </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -126,7 +143,7 @@ const GimHewan = () => {
     if (option.name === answer) {
       setScore((score) => score + 10);
 
-      if (score === 100) {
+      if (score === 90) {
         navigate("/score");
       }
 

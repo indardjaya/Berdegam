@@ -79,7 +79,7 @@ export default function GameSains() {
             <Grid>
               <div className="items-center ">
                 <Card sx={{ maxWidth: 200, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="profesi" src="https://source.unsplash.com/random?vegetable" />
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="profesi" src="/images/sayur/sayur.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Sayur

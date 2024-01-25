@@ -2,21 +2,36 @@ import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
-import ScoreboardIcon from "@mui/icons-material/Scoreboard";
-import { Button, Typography } from "@material-tailwind/react";
 import HomeNavbar from "../Navigation/HomeNavbar";
+import { Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/bentuk/lingkaran.png", name: "LINGKARAN" },
-  { url: "/images/bentuk/segi5.png", name: "SEGI 5" },
-  { url: "/images/bentuk/hati.png", name: "HATI" },
-  { url: "/images/bentuk/ketupat.pnG", name: "KETUPAT" },
-  { url: "/images/bentuk/bintang4.png", name: "BINTANG 4" },
-  { url: "/images/bentuk/segi6.png", name: "SEGI 6" },
-  { url: "/images/bentuk/arahpanah.png", name: "ARAH PANAH" },
-  { url: "/images/bentuk/persegi.png", name: "PERSEGI" },
-  { url: "/images/bentuk/segitiga.png", name: "SEGITIGA" },
-  { url: "/images/bentuk/bintang5.png", name: "BINTANG 5" },
+  { url: "/images/bentuk/1.png", name: "1" },
+  { url: "/images/bentuk/2.png", name: "2" },
+  { url: "/images/bentuk/3.png", name: "3" },
+  { url: "/images/bentuk/4.png", name: "4" },
+  { url: "/images/bentuk/5.png", name: "5" },
+  { url: "/images/bentuk/6.png", name: "6" },
+  { url: "/images/bentuk/7.png", name: "7" },
+  { url: "/images/bentuk/8.png", name: "8" },
+  { url: "/images/bentuk/9.png", name: "9" },
+  { url: "/images/bentuk/10.png", name: "10" },
+  { url: "/images/bentuk/11.png", name: "11" },
+  { url: "/images/bentuk/12.png", name: "12" },
+  { url: "/images/bentuk/13.png", name: "13" },
+  { url: "/images/bentuk/14.png", name: "14" },
+  { url: "/images/bentuk/15.png", name: "15" },
+  { url: "/images/bentuk/16.png", name: "16" },
+  { url: "/images/bentuk/17.png", name: "17" },
+  { url: "/images/bentuk/18.png", name: "18" },
+  { url: "/images/bentuk/19.png", name: "19" },
+  { url: "/images/bentuk/20.png", name: "20" },
+  { url: "/images/bentuk/21.png", name: "21" },
+  { url: "/images/bentuk/22.png", name: "22" },
+  { url: "/images/bentuk/23.png", name: "23" },
+  { url: "/images/bentuk/24.png", name: "24" },
+  { url: "/images/bentuk/25.png", name: "25" },
 ];
 
 const shuffle = (array) => {
@@ -44,11 +59,11 @@ const LevelButton = ({ level, unlocked, onClick }) => {
           height: "50px",
           margin: "10px",
           fontSize: "20px",
-          backgroundColor: unlocked ? "green" : "red",
+          backgroundColor: unlocked ? "blue" : "yellow",
           borderRadius: 5,
         }}
       >
-        <Typography variant="lead" color="red" className="m-1 font-semibold">
+        <Typography variant="lead" color="green" className="m-1 font-semibold">
           {level}
         </Typography>
       </button>
@@ -56,34 +71,37 @@ const LevelButton = ({ level, unlocked, onClick }) => {
   );
 };
 
-const ImageQuestion = ({ image, options, answer, onAnswer }) => {
+const ImageQuestion = ({ options, image, answer, onAnswer }) => {
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <Typography variant="h5" color="orange" className="m-2">
-          Pilih Bentuk
-        </Typography>
-        <img src={image.url} alt={image.name} style={{ width: "100px", height: "100px" }} />
+      <Card className="m-3 w-150">
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <Typography variant="h4" color="blue" className="m-2">
+            PILIH BENTUK
+          </Typography>
+          <img src={image.url} alt={image.name} style={{ width: "100px", height: "100px" }} />
+        </div>
+
         <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
-            <div>
+            <div backgroundColor="blue">
               <Button
+                className="bg-transparent"
                 key={index}
                 onClick={() => onAnswer(option)}
                 style={{
-                  width: "200px",
-                  height: "200px",
+                  width: "150px",
+                  height: "150px",
                   backgroundImage: `url(${option.url})`,
                   backgroundSize: "cover",
                   margin: 2,
-                  marginBottom: 3,
                   border: 1,
                 }}
               ></Button>
             </div>
           ))}
         </div>
-      </div>
+      </Card>
     </>
   );
 };
@@ -95,6 +113,7 @@ const GimBangunDatar = () => {
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -118,6 +137,10 @@ const GimBangunDatar = () => {
     if (option.name === answer) {
       setScore((score) => score + 10);
 
+      if (score === 90) {
+        navigate("/score");
+      }
+
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
         Swal.fire({
@@ -130,6 +153,14 @@ const GimBangunDatar = () => {
         setImage(null);
         setOptions([]);
         setAnswer(null);
+
+        if (score === 30) {
+          Swal.fire({
+            icon: "success",
+            title: "Selamat, Benar berturut-turut yeayyy !!!",
+            text: "Klik Ok Untuk Lanjut",
+          });
+        }
       } else {
         Swal.fire({
           icon: "info",
@@ -153,45 +184,35 @@ const GimBangunDatar = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?toy')` }}>
-        <div style={{ marginBottom: 5, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
-          <Card sx={{ mt: 2 }}>
-            <Typography className="m-3" variant="h4" color="blue">
-              Pilih Gambar Bangun Datar
-            </Typography>
-          </Card>
-          <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
-            {unlockedLevels.map((unlockedLevel) => (
-              <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
-            ))}
-            {Array.from({ length: 10 - unlockedLevels.length }, (_, i) => i + unlockedLevels.length + 1).map((lockedLevel) => (
-              <LevelButton key={lockedLevel} level={lockedLevel} unlocked={false} onClick={() => {}} />
-            ))}
-          </Card>
-          <Card>
-            <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
-              <Grid container>
-                <Grid>
-                  <Box sx={{ m: 2, flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
-                    <ScoreboardIcon fontSize="large" color="primary" height="50px" />
-                    <Typography className="m-2" variant="h5" color="amber">
-                      SKOR POIN:
-                    </Typography>
-                    <Typography className="m-2" variant="h5" color="red">
-                      " {score} "
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid>
-                  <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
-                </Grid>
-              </Grid>
-            </Box>
-          </Card>
         </div>
-        <FooterPage />
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <Card>
+          <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
+            <Grid container>
+              <Grid>
+                <Box sx={{ m: 2, flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
+                  <Typography className="m-2" variant="h5" color="amber">
+                    SKOR POIN: " {score} "
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid></Grid>
+            </Grid>
+          </Box>
+        </Card>
+        <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
+          {unlockedLevels.map((unlockedLevel) => (
+            <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
+          ))}
+          {Array.from({ length: 10 - unlockedLevels.length }, (_, i) => i + unlockedLevels.length + 1).map((lockedLevel) => (
+            <LevelButton key={lockedLevel} level={lockedLevel} unlocked={false} onClick={() => {}} />
+          ))}
+        </Card>
       </div>
+      <FooterPage />
     </>
   );
 };

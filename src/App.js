@@ -15,7 +15,7 @@ import GameHewan from "./components/Game/GameHewan";
 import GameBuah from "./components/Game/GameBuah";
 import GameProfesi from "./components/Game/GameProfesi";
 import GameBentuk from "./components/Game/GameBentuk";
-import GimBangunDatar from "./components/Gim/GimBangundatar";
+import GimBangunDatar from "./components/Gim/GimBangunDatar";
 import Guide from "./components/Navigation/Guide";
 import Panduan from "./components/Navigation/Panduan";
 import GimBangunRuang from "./components/Gim/GimBangunRuang";
@@ -28,6 +28,7 @@ import GimKendaraan from "./components/Gim/GimKendaraan";
 import GimRambu from "./components/Gim/GimRambu";
 import GimProfesi from "./components/Gim/GimProfesi";
 import ScorePage from "./components/Home/ScorePage";
+import GimWarna from "./components/Gim/GimNamaWarna";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
             <Route path="/games/mengenal-profesi" element={<GimProfesi />} />
             <Route path="/games/mengenal-bangun-datar" element={<GimBangunDatar />} />
             <Route path="/games/mengenal-bangun-ruang" element={<GimBangunRuang />} />
+            <Route path="/games/mengenal-nama-warna" element={<GimWarna />} />
           </Route>
         </Routes>
       </BrowserRouter>
