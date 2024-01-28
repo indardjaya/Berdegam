@@ -3,29 +3,35 @@ import Swal from "sweetalert2";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
-import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/warna/1.png", name: "MERAH" },
-  { url: "/images/warna/2.png", name: "KUNING" },
-  { url: "/images/warna/3.png", name: "HIJAU" },
-  { url: "/images/warna/4.png", name: "BIRU" },
-  { url: "/images/warna/5.png", name: "MARUN" },
-  { url: "/images/warna/6.png", name: "COKLAT" },
-  { url: "/images/warna/7.png", name: "BIRU LANGIT" },
-  { url: "/images/warna/8.png", name: "ORANYE" },
-  { url: "/images/warna/9.png", name: "NILA" },
-  { url: "/images/warna/10.png", name: "UNGU" },
-  { url: "/images/warna/11.png", name: "MERAH MUDA" },
-  { url: "/images/warna/12.png", name: "PUTIH" },
-  { url: "/images/warna/13.png", name: "HITAM" },
-  { url: "/images/warna/14.png", name: "PERAK" },
-  { url: "/images/warna/15.png", name: "EMAS" },
-  { url: "/images/warna/16.png", name: "HIJAU LAUT" },
-  { url: "/images/warna/17.png", name: "BIRU DONGKER" },
-  { url: "/images/warna/18.png", name: "HIJAU MUDA" },
-  { url: "/images/warna/19.png", name: "ABU ABU" },
+  { url: "/images/bentuk/1.png", name: "1" },
+  { url: "/images/bentuk/2.png", name: "2" },
+  { url: "/images/bentuk/3.png", name: "3" },
+  { url: "/images/bentuk/4.png", name: "4" },
+  { url: "/images/bentuk/5.png", name: "5" },
+  { url: "/images/bentuk/6.png", name: "6" },
+  { url: "/images/bentuk/7.png", name: "7" },
+  { url: "/images/bentuk/8.png", name: "8" },
+  { url: "/images/bentuk/9.png", name: "9" },
+  { url: "/images/bentuk/10.png", name: "10" },
+  { url: "/images/bentuk/11.png", name: "11" },
+  { url: "/images/bentuk/12.png", name: "12" },
+  { url: "/images/bentuk/13.png", name: "13" },
+  { url: "/images/bentuk/14.png", name: "14" },
+  { url: "/images/bentuk/15.png", name: "15" },
+  { url: "/images/bentuk/16.png", name: "16" },
+  { url: "/images/bentuk/17.png", name: "17" },
+  { url: "/images/bentuk/18.png", name: "18" },
+  { url: "/images/bentuk/19.png", name: "19" },
+  { url: "/images/bentuk/20.png", name: "20" },
+  { url: "/images/bentuk/21.png", name: "21" },
+  { url: "/images/bentuk/22.png", name: "22" },
+  { url: "/images/bentuk/23.png", name: "23" },
+  { url: "/images/bentuk/24.png", name: "24" },
+  { url: "/images/bentuk/25.png", name: "25" },
 ];
 
 const shuffle = (array) => {
@@ -65,20 +71,17 @@ const LevelButton = ({ level, unlocked, onClick }) => {
   );
 };
 
-const ImageQuestion = ({ options, answer, onAnswer }) => {
+const ImageQuestion = ({ options, image, answer, onAnswer }) => {
   return (
     <>
       <Card className="m-3 w-150">
-        <div className=" w-full items-center text-center">
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography variant="h4" color="blue" className="m-2">
-            TEBAK NAMA WARNA
+            PILIH BENTUK WARNA
           </Typography>
+          <img src={image.url} alt={image.name} style={{ width: "100px", height: "100px" }} />
         </div>
-        <CardBody>
-          <Typography variant="h3" color="green" className=" text-center">
-            " {answer} "
-          </Typography>
-        </CardBody>
+
         <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
@@ -103,7 +106,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
   );
 };
 
-const GimWarna = () => {
+const GimBentukWarna = () => {
   const [level, setLevel] = useState(1);
   const [unlockedLevels, setUnlockedLevels] = useState([1]);
   const [image, setImage] = useState(null);
@@ -181,7 +184,7 @@ const GimWarna = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?color')` }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
@@ -214,4 +217,4 @@ const GimWarna = () => {
   );
 };
 
-export default GimWarna;
+export default GimBentukWarna;

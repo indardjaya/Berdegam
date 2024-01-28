@@ -29,6 +29,7 @@ import GimRambu from "./components/Gim/GimRambu";
 import GimProfesi from "./components/Gim/GimProfesi";
 import ScorePage from "./components/Home/ScorePage";
 import GimWarna from "./components/Gim/GimNamaWarna";
+import GimBentukWarna from "./components/Gim/GimBentukWarna";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
             <Route path="/games/mengenal-bangun-datar" element={<GimBangunDatar />} />
             <Route path="/games/mengenal-bangun-ruang" element={<GimBangunRuang />} />
             <Route path="/games/mengenal-nama-warna" element={<GimWarna />} />
+            <Route path="/games/mengenal-bentuk-warna" element={<GimBentukWarna />} />
           </Route>
         </Routes>
       </BrowserRouter>

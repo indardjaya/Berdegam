@@ -125,29 +125,6 @@ export default function GameSains() {
             <Grid>
               <div className="items-center m-2">
                 <Card sx={{ maxWidth: 200, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/bendera/bendera.jpg" />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Gim Bendera
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Bendera
-                    </Typography>
-                  </CardContent>
-                  <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-bendera">
-                      <Button color="blue" size="sm">
-                        MAINKAN
-                      </Button>
-                    </a>
-                  </CardActions>
-                </Card>
-              </div>
-            </Grid>
-
-            <Grid>
-              <div className="items-center m-2">
-                <Card sx={{ maxWidth: 200, margin: 1 }}>
                   <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/emoji/emoji.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

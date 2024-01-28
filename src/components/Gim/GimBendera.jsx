@@ -3,19 +3,45 @@ import Swal from "sweetalert2";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
-import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/bendera/1.jpg", name: "AUSTRALIA" },
+  { url: "/images/bendera/2.jpg", name: "AMERIKA SERIKAT" },
+  { url: "/images/bendera/3.jpg", name: "BELANDA" },
+  { url: "/images/bendera/4.jpg", name: "BELGIA" },
+  { url: "/images/bendera/5.jpg", name: "CHINA" },
+  { url: "/images/bendera/6.jpg", name: "KANADA" },
+  { url: "/images/bendera/7.jpg", name: "DENMARK" },
+  { url: "/images/bendera/8.jpg", name: "REPUBLIK CEKO" },
+  { url: "/images/bendera/9.jpg", name: "DOMINIKA" },
+  { url: "/images/bendera/10.jpg", name: "EKUADOR" },
+  { url: "/images/bendera/11.png", name: "EL SAVADOR" },
+  { url: "/images/bendera/12.jpg", name: "FIJI" },
+  { url: "/images/bendera/13.jpg", name: "FILIPINA" },
+  { url: "/images/bendera/14.jpg", name: "ARGENTINA" },
+  { url: "/images/bendera/15.jpg", name: "BRAZIL" },
+  { url: "/images/bendera/16.jpg", name: "GABON" },
+  { url: "/images/bendera/17.jpg", name: "GAMBIA" },
+  { url: "/images/bendera/18.jpg", name: "HAITI" },
+  { url: "/images/bendera/19.jpg", name: "HONDURAS" },
+  { url: "/images/bendera/20.jpg", name: "INDIA" },
+  { url: "/images/bendera/21.jpg", name: "INDONESIA" },
+  { url: "/images/bendera/22.jpg", name: "JAMAIKA" },
+  { url: "/images/bendera/23.jpg", name: "JEPANG" },
+  { url: "/images/bendera/24.jpg", name: "KAMBOJA" },
+  { url: "/images/bendera/25.jpg", name: "KENYA" },
+  { url: "/images/bendera/26.jpg", name: "LAOS" },
+  { url: "/images/bendera/27.jpg", name: "MADAGASKAR" },
+  { url: "/images/bendera/28.jpg", name: "MALADEWA" },
+  { url: "/images/bendera/29.jpg", name: "NIGERIA" },
+  { url: "/images/bendera/30.jpg", name: "OMAN" },
+  { url: "/images/bendera/31.jpg", name: "QATAR" },
+  { url: "/images/bendera/32.jpg", name: "VENEZUELA" },
+  { url: "/images/bendera/33.jpg", name: "WALES" },
+  { url: "/images/bendera/34.jpg", name: "YAMAN" },
+  { url: "/images/bendera/35.jpg", name: "ZIMBABWE" },
 ];
 
 const shuffle = (array) => {
@@ -55,21 +81,20 @@ const LevelButton = ({ level, unlocked, onClick }) => {
   );
 };
 
-const ImageQuestion = ({ options, answer, onAnswer }) => {
+const ImageQuestion = ({ options, image, answer, onAnswer }) => {
   return (
     <>
       <Card className="m-3 w-150">
-        <div className=" w-full items-center text-center">
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography variant="h4" color="blue" className="m-2">
-            TEBAK GAMBAR BENDERA
+            TEBAK BENDERA
+          </Typography>
+          <Typography variant="h5" color="red" className="m-2">
+            {answer}
           </Typography>
         </div>
-        <CardBody>
-          <Typography variant="h3" color="green" className=" text-center">
-            " {answer} "
-          </Typography>
-        </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -77,7 +102,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
                 key={index}
                 onClick={() => onAnswer(option)}
                 style={{
-                  width: "150px",
+                  width: "250px",
                   height: "150px",
                   backgroundImage: `url(${option.url})`,
                   backgroundSize: "cover",
@@ -100,6 +125,7 @@ const GimBendera = () => {
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -122,6 +148,10 @@ const GimBendera = () => {
   const handleAnswer = (option) => {
     if (option.name === answer) {
       setScore((score) => score + 10);
+
+      if (score === 90) {
+        navigate("/score");
+      }
 
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
@@ -166,11 +196,11 @@ const GimBendera = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?flags')` }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
-        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
         <Card>
           <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
             <Grid container>
@@ -184,7 +214,7 @@ const GimBendera = () => {
               <Grid></Grid>
             </Grid>
           </Box>
-        </Card>{" "}
+        </Card>
         <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
           {unlockedLevels.map((unlockedLevel) => (
             <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
