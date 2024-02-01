@@ -3,19 +3,27 @@ import Swal from "sweetalert2";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
-import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/profesi/nahkoda.jpg", name: "NAHKODA" },
+  { url: "/images/profesi/atlet.jpg", name: "ATLET" },
+  { url: "/images/profesi/dokter.jpg", name: "DOKTER" },
+  { url: "/images/profesi/guru.jpg", name: "GURU" },
+  { url: "/images/profesi/koki.jpg", name: "KOKI" },
+  { url: "/images/profesi/pembawa-berita.jpg", name: "PEMBAWA BERITA" },
+  { url: "/images/profesi/penyanyi.jpg", name: "PENYANYI" },
+  { url: "/images/profesi/perenang.jpg", name: "ATLET RENANG" },
+  { url: "/images/profesi/pilot.jpg", name: "PILOT" },
+  { url: "/images/profesi/polisi.jpg", name: "POLISI" },
+  { url: "/images/profesi/pemadam.jpg", name: "PEMADAM" },
+  { url: "/images/profesi/teknisi.jpg", name: "TEKNISI" },
+  { url: "/images/profesi/petani.jpg", name: "PETANI" },
+  { url: "/images/profesi/pelukis.jpg", name: "PELUKIS" },
+  { url: "/images/profesi/pelaut.jpg", name: "PELAUT" },
+  { url: "/images/profesi/supir.jpg", name: "SUPIR" },
+  { url: "/images/profesi/perawat.jpg", name: "PERAWAT" },
 ];
 
 const shuffle = (array) => {
@@ -55,36 +63,35 @@ const LevelButton = ({ level, unlocked, onClick }) => {
   );
 };
 
-const ImageQuestion = ({ options, answer, onAnswer }) => {
+const ImageQuestion = ({ options, image, answer, onAnswer }) => {
   return (
     <>
       <Card className="m-3 w-150">
-        <div className=" w-full items-center text-center">
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography variant="h4" color="blue" className="m-2">
             TEBAK GAMBAR PROFESI
           </Typography>
+          <img src={image.url} alt={image.name} style={{ width: "200px", height: "180px", borderRadius: "3px", border: "1px solid" }} />
         </div>
-        <CardBody>
-          <Typography variant="h3" color="green" className=" text-center">
-            " {answer} "
-          </Typography>
-        </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, marginTop: 25, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
-                className="bg-transparent"
+                color="blue"
                 key={index}
                 onClick={() => onAnswer(option)}
                 style={{
-                  width: "150px",
-                  height: "150px",
-                  backgroundImage: `url(${option.url})`,
-                  backgroundSize: "cover",
+                  width: "200px",
+                  height: "50px",
                   margin: 2,
                   border: 1,
+                  backgroundColor: "blue",
+                  fontSize: "15px",
                 }}
-              ></Button>
+              >
+                {option.name}
+              </Button>
             </div>
           ))}
         </div>
@@ -100,6 +107,7 @@ const GimProfesi = () => {
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -122,6 +130,10 @@ const GimProfesi = () => {
   const handleAnswer = (option) => {
     if (option.name === answer) {
       setScore((score) => score + 10);
+
+      if (score === 90) {
+        navigate("/score");
+      }
 
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
@@ -166,11 +178,11 @@ const GimProfesi = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?profession')` }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
-        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
         <Card>
           <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
             <Grid container>
@@ -184,7 +196,7 @@ const GimProfesi = () => {
               <Grid></Grid>
             </Grid>
           </Box>
-        </Card>{" "}
+        </Card>
         <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
           {unlockedLevels.map((unlockedLevel) => (
             <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />

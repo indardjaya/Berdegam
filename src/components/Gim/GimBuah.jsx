@@ -81,7 +81,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
             " {answer} "
           </Typography>
         </CardBody>
-        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "rounded" }}>
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "1px solid rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -94,7 +94,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
                   backgroundImage: `url(${option.url})`,
                   backgroundSize: "cover",
                   margin: 2,
-                  border: 1,
+                  border: "1px solid",
                 }}
               ></Button>
             </div>
@@ -183,7 +183,7 @@ const GimBuah = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruits')` }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>

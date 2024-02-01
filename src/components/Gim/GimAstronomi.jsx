@@ -4,18 +4,30 @@ import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
 import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/astronomi/1.jpg", name: "MATAHARI" },
+  { url: "/images/astronomi/2.jpg", name: "BULAN" },
+  { url: "/images/astronomi/3.jpg", name: "BINTANG" },
+  { url: "/images/astronomi/4.webp", name: "MERKURIUS" },
+  { url: "/images/astronomi/5.jpg", name: "VENUS" },
+  { url: "/images/astronomi/6.jpg", name: "BUMI" },
+  { url: "/images/astronomi/7.jpg", name: "MARS" },
+  { url: "/images/astronomi/8.jpg", name: "JUPITER" },
+  { url: "/images/astronomi/9.jpg", name: "SATURNUS" },
+  { url: "/images/astronomi/10.jpg", name: "URANUS" },
+  { url: "/images/astronomi/11.jpg", name: "NEPTUNUS" },
+  { url: "/images/astronomi/12.jpg", name: "PLUTO" },
+  { url: "/images/astronomi/13.jpg", name: "TATA SURYA" },
+  { url: "/images/astronomi/14.jpg", name: "ASTEROID" },
+  { url: "/images/astronomi/15.jpg", name: "METEOR" },
+  { url: "/images/astronomi/16.jpg", name: "SATELIT" },
+  { url: "/images/astronomi/17.jpg", name: "GALAKSI" },
+  { url: "/images/astronomi/18.jpg", name: "ASTRONOT" },
+  { url: "/images/astronomi/19.jpg", name: "PESAWAT LUAR ANGKASA" },
+  { url: "/images/astronomi/20.jpg", name: "LUBANG HITAM" },
+  { url: "/images/astronomi/21.jpg", name: "SUPERNOVA" },
 ];
 
 const shuffle = (array) => {
@@ -69,7 +81,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
             " {answer} "
           </Typography>
         </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, border: "1px solid rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
@@ -82,7 +94,7 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
                   backgroundImage: `url(${option.url})`,
                   backgroundSize: "cover",
                   margin: 2,
-                  border: 1,
+                  border: "1px solid",
                 }}
               ></Button>
             </div>
@@ -100,6 +112,7 @@ const GimAstronomi = () => {
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -122,6 +135,10 @@ const GimAstronomi = () => {
   const handleAnswer = (option) => {
     if (option.name === answer) {
       setScore((score) => score + 10);
+
+      if (score === 90) {
+        navigate("/score");
+      }
 
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
@@ -166,11 +183,11 @@ const GimAstronomi = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?astronomy')` }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
-        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
         <Card>
           <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
             <Grid container>
@@ -184,7 +201,7 @@ const GimAstronomi = () => {
               <Grid></Grid>
             </Grid>
           </Box>
-        </Card>{" "}
+        </Card>
         <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
           {unlockedLevels.map((unlockedLevel) => (
             <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
