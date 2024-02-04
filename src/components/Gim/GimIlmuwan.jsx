@@ -3,19 +3,25 @@ import Swal from "sweetalert2";
 import FooterPage from "../LandingPage/FooterPage";
 import { Box, Card, Grid } from "@mui/material";
 import HomeNavbar from "../Navigation/HomeNavbar";
-import { CardBody, Typography, Button } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const images = [
-  { url: "/images/buah/apel.jpg", name: "Apel" },
-  { url: "/images/buah/belimbing.jpg", name: "Belimbing" },
-  { url: "/images/buah/ceri.jpg", name: "Ceri" },
-  { url: "/images/buah/durian.jpg", name: "Durian" },
-  { url: "/images/buah/jambu.jpg", name: "Jambu" },
-  { url: "/images/buah/semangka.jpg", name: "Semangka" },
-  { url: "/images/buah/anggur.jpg", name: "Anggur" },
-  { url: "/images/buah/melon.jpg", name: "Melon" },
-  { url: "/images/buah/kelapa.jpg", name: "Kelapa" },
-  { url: "/images/buah/buahnaga.jpg", name: "Buah Naga" },
+  { url: "/images/ilmuwan/albert.jpeg", urls: "/images/ilmuwan/relativitas.jpg", name: "Albert Einstein", info: "Penemu Teori Relativitas" },
+  { url: "/images/ilmuwan/charles.jpeg", urls: "/images/ilmuwan/evolusi.jpg", name: "Charles Darwin", info: "Penemu Teori Evolusi" },
+  { url: "/images/ilmuwan/isaac.jpeg", urls: "/images/ilmuwan/gravitasi.jpg", name: "Isaac Newton", info: "Penemu Hukum Gravitasi" },
+  { url: "/images/ilmuwan/nikola.jpeg", urls: "/images/ilmuwan/arus.jpg", name: "Nikola Tesla", info: "Penemu Sistem arus listrik bolak-balik" },
+  { url: "/images/ilmuwan/Faraday.jpg", urls: "/images/ilmuwan/listrik.jpg", name: "Michael Faraday", info: "Penemu Listrik dan Elektromagnetik" },
+  { url: "/images/ilmuwan/galileo.jpg", urls: "/images/ilmuwan/teleskop.jpg", name: "Galileo Galilei", info: "Penyempurna Teleskop" },
+  { url: "/images/ilmuwan/edison.jpg", urls: "/images/ilmuwan/bohlam.jpg", name: "Thomas A. Edison", info: "Penemu Bohlam" },
+  { url: "/images/ilmuwan/alexander.jpg", urls: "/images/ilmuwan/telegraf.jpg", name: "Alexander G. Bell", info: "Penemu Telegraf" },
+  { url: "/images/ilmuwan/antonio.jpg", urls: "/images/ilmuwan/telepon.jpg", name: "Antonio Meucci", info: "Penemu Telepon" },
+  { url: "/images/ilmuwan/alfred.jpg", urls: "/images/ilmuwan/wallace.jpg", name: "Alfred R. Wallace", info: "Dikenal Dengan Penemuan Garis Wallace" },
+  { url: "/images/ilmuwan/james.jpg", urls: "/images/ilmuwan/uap.jpg", name: "James Watt", info: "Dikenal Sebagai Penyempurna Mesin Uap" },
+  { url: "/images/ilmuwan/oppenheimer.jpg", urls: "/images/ilmuwan/atom.jpg", name: "J. Robert Oppenheimer", info: "dijuluki sebagai bapak bom atom" },
+  { url: "/images/ilmuwan/wegener.jpg", urls: "/images/ilmuwan/benua.jpg", name: "  Alfred Wegener ", info: "dikenal dengan gagasan pergeseran benua" },
+  { url: "/images/ilmuwan/euklides.jpeg", urls: "/images/ilmuwan/geometri.png", name: "Euklides", info: "Bapak Geometri" },
+  { url: "/images/ilmuwan/Archimedes.jpg", urls: "/images/ilmuwan/prinsiparsi.png", name: "Archimedes", info: "Dikenal Dengan Teori Gaya Apung" },
 ];
 
 const shuffle = (array) => {
@@ -55,25 +61,25 @@ const LevelButton = ({ level, unlocked, onClick }) => {
   );
 };
 
-const ImageQuestion = ({ options, answer, onAnswer }) => {
+const ImageQuestion = ({ options, image, onAnswer }) => {
   return (
     <>
       <Card className="m-3 w-150">
-        <div className=" w-full items-center text-center">
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography variant="h4" color="blue" className="m-2">
-            TEBAK GAMBAR EMOJI
+            TEBAK GAMBAR ILMUWAN
           </Typography>
+          <Typography variant="h6" color="red" className="m-2">
+            " {image.info} "
+          </Typography>
+          <img src={image.urls} alt={image.name} style={{ width: "250px", height: "150px", border: "rounded 3px", borderRadius: "3px" }} />
         </div>
-        <CardBody>
-          <Typography variant="h3" color="green" className=" text-center">
-            " {answer} "
-          </Typography>
-        </CardBody>
-        <div className=" m-2 grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
+
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 3, marginTop: 25, border: "rounded" }}>
           {options.map((option, index) => (
             <div backgroundColor="blue">
               <Button
-                className="bg-transparent"
+                color="blue"
                 key={index}
                 onClick={() => onAnswer(option)}
                 style={{
@@ -82,9 +88,10 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
                   backgroundImage: `url(${option.url})`,
                   backgroundSize: "cover",
                   margin: 2,
-                  border: 1,
+                  border: "1px solid",
                 }}
               ></Button>
+              <Typography color="green">{option.name}</Typography>
             </div>
           ))}
         </div>
@@ -93,13 +100,14 @@ const ImageQuestion = ({ options, answer, onAnswer }) => {
   );
 };
 
-const GimEmoji = () => {
+const GimIlmuwan = () => {
   const [level, setLevel] = useState(1);
   const [unlockedLevels, setUnlockedLevels] = useState([1]);
   const [image, setImage] = useState(null);
   const [options, setOptions] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const selectLevel = (level) => {
     setLevel(level);
@@ -114,6 +122,7 @@ const GimEmoji = () => {
     const options = shuffledImages.slice(0, 4);
     const shuffledOptions = shuffle(options);
     const answer = image.name;
+
     setImage(image);
     setOptions(shuffledOptions);
     setAnswer(answer);
@@ -122,6 +131,10 @@ const GimEmoji = () => {
   const handleAnswer = (option) => {
     if (option.name === answer) {
       setScore((score) => score + 10);
+
+      if (score === 90) {
+        navigate("/score");
+      }
 
       if (level < 10) {
         setUnlockedLevels((unlockedLevels) => [...unlockedLevels, level + 1]);
@@ -166,11 +179,11 @@ const GimEmoji = () => {
 
   return (
     <>
-      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?fruit')` }}>
+      <div className="items-center  flex align-center flex-col justify-center text-center bg-cover " style={{ backgroundImage: `url('https://source.unsplash.com/random?vehicle')` }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <HomeNavbar />
         </div>
-        <div sx={{ m: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>{image && options && answer && <ImageQuestion image={image} options={options} answer={answer} onAnswer={handleAnswer} />}</div>
         <Card>
           <Box sx={{ flexGrow: 1, alignItems: "center", justifyContent: "ceneter", justifyItems: "center" }}>
             <Grid container>
@@ -184,7 +197,7 @@ const GimEmoji = () => {
               <Grid></Grid>
             </Grid>
           </Box>
-        </Card>{" "}
+        </Card>
         <Card style={{ display: "flex", flexWrap: "wrap", margin: 3 }}>
           {unlockedLevels.map((unlockedLevel) => (
             <LevelButton key={unlockedLevel} level={unlockedLevel} unlocked={true} onClick={() => selectLevel(unlockedLevel)} />
@@ -199,4 +212,4 @@ const GimEmoji = () => {
   );
 };
 
-export default GimEmoji;
+export default GimIlmuwan;

@@ -98,7 +98,9 @@ export default function GameSains() {
                 </Card>
               </div>
             </Grid>
+          </Grid>
 
+          <Grid container sx={{ justifyContent: "center" }}>
             <Grid>
               <div className="items-center ">
                 <Card sx={{ maxWidth: 200, margin: 1 }}>
@@ -125,17 +127,17 @@ export default function GameSains() {
             <Grid>
               <div className="items-center m-2">
                 <Card sx={{ maxWidth: 200, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/emoji/emoji.jpg" />
+                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="buah" src="/images/ilmuwan/ilmuwan.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Gim Emoji
+                      Gim Ilmuwan
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Emoji
+                      Menebak Gambar Ilmuwan
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-emoji">
+                    <a href="/games/mengenal-ilmuwan">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>
@@ -159,29 +161,6 @@ export default function GameSains() {
                   </CardContent>
                   <CardActions sx={{ justifyContent: "center" }}>
                     <a href="/games/mengenal-kendaraan">
-                      <Button color="blue" size="sm">
-                        MAINKAN
-                      </Button>
-                    </a>
-                  </CardActions>
-                </Card>
-              </div>
-            </Grid>
-
-            <Grid>
-              <div className="items-center m-2">
-                <Card sx={{ maxWidth: 200, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 100 }} component="img" alt="profesi" src="/images/rambu/rambu.jpg" />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Gim Rambu
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Menebak Gambar Rambu
-                    </Typography>
-                  </CardContent>
-                  <CardActions sx={{ justifyContent: "center" }}>
-                    <a href="/games/mengenal-rambu">
                       <Button color="blue" size="sm">
                         MAINKAN
                       </Button>

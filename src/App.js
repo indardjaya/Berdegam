@@ -23,13 +23,13 @@ import GimBuah from "./components/Gim/GimBuah";
 import GimAnatomi from "./components/Gim/GimAnatomi";
 import GimAstronomi from "./components/Gim/GimAstronomi";
 import GimBendera from "./components/Gim/GimBendera";
-import GimEmoji from "./components/Gim/GimEmoji";
 import GimKendaraan from "./components/Gim/GimKendaraan";
 import GimRambu from "./components/Gim/GimRambu";
 import GimProfesi from "./components/Gim/GimProfesi";
 import ScorePage from "./components/Home/ScorePage";
 import GimWarna from "./components/Gim/GimNamaWarna";
 import GimBentukWarna from "./components/Gim/GimBentukWarna";
+import GimIlmuwan from "./components/Gim/GimIlmuwan";
 
 function App() {
   return (
@@ -61,7 +61,7 @@ function App() {
             <Route path="/games/mengenal-astronomi" element={<GimAstronomi />} />
             <Route path="/games/mengenal-animasi" element={<GimSayur />} />
             <Route path="/games/mengenal-bendera" element={<GimBendera />} />
-            <Route path="/games/mengenal-emoji" element={<GimEmoji />} />
+            <Route path="/games/mengenal-ilmuwan" element={<GimIlmuwan />} />
             <Route path="/games/mengenal-kendaraan" element={<GimKendaraan />} />
             <Route path="/games/mengenal-rambu" element={<GimRambu />} />
             <Route path="/games/mengenal-profesi" element={<GimProfesi />} />
