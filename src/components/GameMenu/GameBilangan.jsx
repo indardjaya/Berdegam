@@ -9,8 +9,8 @@ export default function GameBilanganHuruf() {
           <Grid container sx={{ justifyContent: "center" }}>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/angka/angka.jpg" />
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 180 }} component="img" alt="buah" src="/images/angka/angka.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Angka
@@ -31,8 +31,8 @@ export default function GameBilanganHuruf() {
             </Grid>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/simbol/simbol.jpg" />
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 180 }} component="img" alt="buah" src="/images/simbol/simbol.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Simbol
@@ -53,8 +53,8 @@ export default function GameBilanganHuruf() {
             </Grid>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/abjad/abjad.jpg" />
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 180 }} component="img" alt="buah" src="/images/abjad/abjad.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       Gim Abjad
@@ -75,11 +75,57 @@ export default function GameBilanganHuruf() {
             </Grid>
             <Grid>
               <div className="items-center ">
-                <Card sx={{ maxWidth: 250, margin: 1 }}>
-                  <CardMedia sx={{ maxHeight: 150 }} component="img" alt="buah" src="/images/kata/kata.jpg" />
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 180 }} component="img" alt="buah" src="/images/kata/kata.jpg" />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Gim KosaKata
+                      Gim Kata
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Kata-Kata
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-kata">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+
+            <Grid>
+              <div className="items-center ">
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 180 }} component="img" alt="buah" src="/images/kata/kata.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Penjumlahan
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Menebak Kata-Kata
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <a href="/games/mengenal-penjumlahan">
+                      <Button color="blue" size="sm">
+                        MAINKAN
+                      </Button>
+                    </a>
+                  </CardActions>
+                </Card>
+              </div>
+            </Grid>
+
+            <Grid>
+              <div className="items-center ">
+                <Card sx={{ maxWidth: 300, margin: 1 }}>
+                  <CardMedia sx={{ maxHeight: 180 }} component="img" alt="buah" src="/images/kata/kata.jpg" />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Gim Kata
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       Menebak Kata-Kata

@@ -32,6 +32,9 @@ import GimBentukWarna from "./components/Gim/GimBentukWarna";
 import GimIlmuwan from "./components/Gim/GimIlmuwan";
 import GimAngka from "./components/Gim/GimAngka";
 import GimAbjad from "./components/Gim/GimAbjad";
+import GimKata from "./components/Gim/GimKata";
+import GimSimbol from "./components/Gim/GimSimbol";
+import GimPenjumlahan from "./components/Gim/GimPenjumlahan";
 
 function App() {
   return (
@@ -72,7 +75,10 @@ function App() {
             <Route path="/games/mengenal-nama-warna" element={<GimWarna />} />
             <Route path="/games/mengenal-bentuk-warna" element={<GimBentukWarna />} />
             <Route path="/games/mengenal-angka" element={<GimAngka />} />
+            <Route path="/games/mengenal-simbol" element={<GimSimbol />} />
             <Route path="/games/mengenal-abjad" element={<GimAbjad />} />
+            <Route path="/games/mengenal-kata" element={<GimKata />} />
+            <Route path="/games/mengenal-penjumlahan" element={<GimPenjumlahan />} />
           </Route>
         </Routes>
       </BrowserRouter>
